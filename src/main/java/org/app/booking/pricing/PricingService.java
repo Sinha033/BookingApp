@@ -1,4 +1,4 @@
-package org.booking.pricing;
+package org.app.booking.pricing;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ public class PricingService {
 
     private final List<DiscountStrategy> strategies;
 
-    public double calculate(int tickets, LocalTime showTime) {
+    public double calculatePrice(int tickets, LocalTime showTime) {
 
         double basePrice = 200;
         double total = basePrice * tickets;

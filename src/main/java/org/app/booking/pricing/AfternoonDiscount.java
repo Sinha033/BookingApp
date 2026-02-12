@@ -1,4 +1,4 @@
-package org.booking.pricing;
+package org.app.booking.pricing;
 
 import org.springframework.stereotype.Component;
 import java.time.LocalTime;

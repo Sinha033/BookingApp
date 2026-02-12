@@ -1,4 +1,4 @@
-package org.booking.exception;
+package org.app.booking.exception;
 
 public class SeatAlreadyBookedException extends RuntimeException {
 
