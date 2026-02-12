@@ -37,4 +37,12 @@ public class BookingController {
     public String book(@RequestBody BookingRequest request) {
         return service.bookTickets(request);
     }
+
+    @GetMapping("/browse-all")
+    public List<ShowResponse> browseAll() {
+        return showRepository.findAll()
+                .stream()
+                .map(ShowResponse::new)
+                .toList();
+    }
 }
