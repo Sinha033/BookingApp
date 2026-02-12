@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.stream.IntStream;
 
 @Component
 @RequiredArgsConstructor
@@ -40,12 +39,12 @@ public class DataLoader {
         show.setShowTime(LocalTime.of(14, 0));
         showRepo.save(show);
 
-        IntStream.rangeClosed(1, 10).forEach(i -> {
+        for (int i = 1; i <= 10; i++) {
             Seat seat = new Seat();
             seat.setSeatNumber("A" + i);
             seat.setBooked(false);
             seat.setShow(show);
             seatRepo.save(seat);
-        });
+        }
     }
 }

@@ -1,13 +1,15 @@
 package org.booking.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Show {
 
     @Id
@@ -17,9 +19,9 @@ public class Show {
     private LocalDate showDate;
     private LocalTime showTime;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Theatre theatre;
 }

@@ -1,10 +1,12 @@
 package org.booking.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Seat {
 
     @Id
@@ -13,7 +15,8 @@ public class Seat {
 
     private String seatNumber;
     private boolean booked;
-
+    @Version
+    private Long version;
     @ManyToOne
     private Show show;
 }
